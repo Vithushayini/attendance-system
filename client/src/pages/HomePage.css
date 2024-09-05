@@ -1,0 +1,35 @@
+.home-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full height of the viewport */
+    background-color: #f0f4f7; /* Light background color */
+    font-family: 'Arial', sans-serif;
+
+}
+
+.home-title {
+    font-size: 2.5rem; /* Large title */
+    color: #c51616; /* Dark text color */
+    margin-bottom: 20px; /* Spacing below the title */
+}
+
+.logout-button {
+    padding: 10px 20px; /* Padding inside the button */
+    font-size: 1.2rem; /* Button text size */
+    background-color: #007bff; /* Primary button color */
+    color: white; /* White text */
+    border: none; /* Remove default border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Show pointer on hover */
+    transition: background-color 0.3s ease; /* Smooth hover effect */
+}
+
+.logout-button:hover {
+    background-color: #509def; /* Darker blue on hover */
+}
+
+.logout-button:focus {
+    outline: none; /* Remove focus outline */
+}

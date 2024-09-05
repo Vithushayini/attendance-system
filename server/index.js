@@ -2,6 +2,9 @@ const express = require('express');
 const dotenv = require('dotenv');
 const path = require('path');
 const app = express();
+const cors = require('cors');
+app.use(cors());
+
 
 dotenv.config({path:path.join(__dirname,"config.env")});
 

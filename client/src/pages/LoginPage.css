@@ -1,0 +1,87 @@
+/* LoginPage.css */
+
+/* Overall page styling */
+.login-page-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f8f9fa;
+}
+
+/* Login section block */
+.login-block {
+    width: 100%;
+    max-width: 400px;
+    background-color: #ffffff;
+    padding: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.login-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.login-content {
+    width: 100%;
+}
+
+.login-title {
+    font-size: 2rem;
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.login-form {
+    width: 100%;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.login-label {
+    display: block;
+    font-size: 1rem;
+    margin-bottom: 8px;
+    color: #555;
+}
+
+.login-input {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    background-color: #f8f9fa;
+    transition: border-color 0.3s ease;
+}
+
+.login-input:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+.login-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.login-btn:hover {
+    background-color: #0056b3;
+}
+
+.login-btn:focus {
+    outline: none;
+}
