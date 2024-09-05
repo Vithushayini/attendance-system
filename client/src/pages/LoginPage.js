@@ -38,6 +38,30 @@ export default function LoginPage(){
             errors.password="password required";
         }
 
+        if(inputs.username && inputs.password){
+            setLoading(true)
+
+            console.log('Sending API request with inputs:', inputs);
+            try{
+                const response= await axios.post('http://localhost:8000/api/v1/login',{
+                    username:inputs.username,
+                    password:inputs.password
+                });
+                localStorage.setItem('token',response.data.token);
+                //navigate to home page
+                navigate('/home');
+            }catch(error){
+                setError("invalid username or password")
+                
+                console.log(error);
+                
+            }finally{
+                setLoading(false);
+            }
+            
+        }
+
+
         setErrors({...errors});
         
     }
