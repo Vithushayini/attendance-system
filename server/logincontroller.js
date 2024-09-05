@@ -17,6 +17,6 @@ exports.loginUser = (req,res,next)=>{
         res.json({token})
     }else{
         res.status(401)
-           .json({message:'Invalid username or password'})
+           .json({message:'Invalid usernam or password'})
     }
 }

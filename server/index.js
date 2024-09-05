@@ -11,3 +11,7 @@ app.listen(process.env.PORT,()=>{
     console.log(`Server listening to the port ${process.env.PORT}`);
     
 })
+
+const auth = require('./routes/auth');
+
+app.use('/api/v1/',auth);
