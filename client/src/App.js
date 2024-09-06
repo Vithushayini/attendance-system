@@ -21,9 +21,13 @@ function App() {
               path="/"
               element={isLoggedIn? <Navigate to="/home" />: <LoginPage setIsLoggedIn={setIsLoggedIn}/>}
             />
-            <Route
+            {/* <Route
             path="/home"
             element= {<HomePage setIsLoggedIn={setIsLoggedIn}/>}
+            /> */}
+            <Route
+            path="/home"
+            element={isLoggedIn ? <HomePage setIsLoggedIn={setIsLoggedIn} /> : <Navigate to="/" />}
             />
 
           </Routes>
