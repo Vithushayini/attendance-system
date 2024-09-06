@@ -4,7 +4,7 @@ import {useState} from 'react';
 import {useNavigate} from 'react-router-dom';
 import axios from 'axios';
 
-export default function LoginPage(){
+export default function LoginPage({setIsLoggedIn}){
     const initialStateErrors = {
         username:null,
         password:null
@@ -29,6 +29,7 @@ export default function LoginPage(){
     const handleSubmit=async (event)=>{
         event.preventDefault();
         let errors =initialStateErrors; 
+        let err=null;
         // setErrors(initialStateErrors);
         
         if(inputs.username == ""){
@@ -48,11 +49,12 @@ export default function LoginPage(){
                     password:inputs.password
                 });
                 localStorage.setItem('token',response.data.token);
+                setIsLoggedIn(true);
                 //navigate to home page
                 navigate('/home');
             }catch(error){
-                setError("invalid username or password")
-                
+                // setError("invalid username or password")
+                err="invalid username or password";
                 console.log(error);
                 
             }finally{
@@ -61,7 +63,7 @@ export default function LoginPage(){
             
         }
 
-
+        setError(err);
         setErrors({...errors});
         
     }

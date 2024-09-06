@@ -2,11 +2,12 @@ import '../pages/HomePage.css';
 
 import {useNavigate} from 'react-router-dom';
 
-export default function HomePage(){
+export default function HomePage({setIsLoggedIn}){
     const navigate = useNavigate();
 
     const handleLogout = ()=>{
         localStorage.removeItem('token');
+        setIsLoggedIn(false)
         navigate('/');
     }
 

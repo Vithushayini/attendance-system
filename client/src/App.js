@@ -1,14 +1,31 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes,Navigate } from "react-router-dom";
 import LoginPage from "./pages/LoginPage";
 import HomePage from "./pages/HomePage";
+import { useEffect, useState } from "react";
 
 function App() {
+
+  const [isLoggedIn,setIsLoggedIn]= useState(!!localStorage.getItem('token'));
+  // useEffect(()=>{
+  //   const token = localStorage.getItem('token');
+  //   setIsLoggedIn(!!token);
+  // },[isLoggedIn])
+  
+
   return (
     <div className="App">
        <BrowserRouter>
           <Routes>
-            <Route path="/login" element={<LoginPage/>}/>
-            <Route path="/home" element={<HomePage/>}/>
+
+            <Route
+              path="/"
+              element={isLoggedIn? <Navigate to="/home" />: <LoginPage setIsLoggedIn={setIsLoggedIn}/>}
+            />
+            <Route
+            path="/home"
+            element= {<HomePage setIsLoggedIn={setIsLoggedIn}/>}
+            />
+
           </Routes>
        </BrowserRouter>
     </div>
