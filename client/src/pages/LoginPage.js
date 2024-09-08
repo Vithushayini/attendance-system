@@ -111,7 +111,7 @@ export default function LoginPage({setIsLoggedIn}){
                             {loading ?
                                 (<div  className="loading-container">
                                     <div className="loading-spinner">
-                                        <span className="sr-only">Loading...</span>
+                                        {/* <span className="sr-only">Loading...</span> */}
                                     </div>
                                 </div>):null
                                 }
